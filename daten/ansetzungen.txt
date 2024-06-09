@@ -1,5 +1,0 @@
-Paar: ('G2', 'L3'), Gesamtpunktzahl: 1200
-Paar: ('G3', 'L2'), Gesamtpunktzahl: 1200
-Paar: ('L1', 'S2'), Gesamtpunktzahl: 1200
-Paar: ('R1', 'S1'), Gesamtpunktzahl: 1200
-Paar: ('R2', 'S3'), Gesamtpunktzahl: 1200
