@@ -1,0 +1,743 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<title>{{v_version_titel}}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../static/bewerber.ico" type="image/x-icon" />
+<link rel="stylesheet" href="../static/w3.css">
+<link rel="stylesheet" href="../static/bootstrap.min.css">
+<link rel="stylesheet" href="../static/dna-theme.css">
+<link rel="stylesheet" href="../static/format.css">
+<!-- fertig 26.12.2020 -->
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="w3-row-padding">
+        <header class="card">
+            <center><h3>{{v_version_program}}</h3></center>
+        </header>
+    </div>
+    <br>
+
+    <!--Navigation-->
+    <div class="w3-container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link w3-green" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Runden</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item w3-hover-teal" href="rundeneu.html">Runde neu losen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundeneuerf.html">Runde neu manuell</a>
+                    <a class="dropdown-item w3-hover-green" href="ergebnis.html">Ergebnis eintragen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundebeenden.html">Runde beenden</a>
+                </div>
+            </li>
+            <!-- Navigation nur Home -->
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="w3-row-padding">
+        <br>
+        <form action="http://localhost:17102/ergebnis.html" class="w3-container w3-card-4 w3-round" , method="POST">
+            <div class="w3-third">
+                <h3>&nbsp;</h3>
+            </div>
+
+            <div class="w3-third">
+                <center><h3>Ergebnisse erfassen</h3></center>
+                <br />
+            </div>
+
+            <div class="w3-third">
+                <h3>&nbsp;</h3>
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-quarter">
+                    <h3>&nbsp;</h3>
+                </div>
+
+                <div class="w3-half w3-card-4 w3-round">
+                    <br />
+                    <div class="w3-container">
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 1</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld1t1" value="{{f1t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld1t2" value="{{f1t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" value="0" name="form_erg1t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg1t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+
+
+                    <div class="w3-container">
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 2</label></p>
+                        </div>
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld2t1" value="{{f2t1}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld2t2" value="{{f2t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg2t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg2t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+
+
+                    <div class="w3-container">
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 3</label></p>
+                        </div>
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld3t1" value="{{f3t1}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld3t2" value="{{f3t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg3t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg3t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+
+                    </div>
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 4</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld4t1" value="{{f4t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld4t2" value="{{f4t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg4t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg4t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 5</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld5t1" value="{{f5t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld5t2" value="{{f5t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg5t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg5t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 6</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld6t1" value="{{f6t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld6t2" value="{{f6t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg6t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg6t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 7</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld7t1" value="{{f7t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld7t2" value="{{f7t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg7t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg7t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 8</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld8t1" value="{{f8t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld8t2" value="{{f8t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg8t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg8t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 9</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld9t1" value="{{f9t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld9t2" value="{{f9t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg9t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg9t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+
+                    </div>
+
+                    <div class="w3-container">
+
+                        <div class="w3-col l1 w3-left">
+                            <p><label>Feld 10</label></p>
+                        </div>
+
+                        <input class="w3-col l2 w3-border" type="text" name="form_Feld10t1" value="{{f10t1}}" readonly>
+
+                        <div class="w3-col l1">
+                            <center>&nbsp;-&nbsp;</center>
+                        </div>
+
+                        <input class="w3-col l2 w3-border w3-left" type="text" name="form_Feld10t2" value="{{f10t2}}" readonly>
+                        <div class="w3-col l1">
+                            <center>&nbsp;=&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg10t1">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <div class="w3-col l1">
+                            <center>&nbsp;:&nbsp;</center>
+                        </div>
+
+                        <select class="form-control w3-col l1 w3-input w3-border" type="text" name="form_erg10t2">
+                            <option value="0" selected="selected">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                        </select>
+                        <br />
+                    </div>
+                    <br />
+                </div>
+                <br />
+                <br />
+                <div class="w3-quarter">
+                    <h3>&nbsp;</h3>
+                    <br />
+                </div>
+                <br />
+            </div>
+            <br />
+    </div>
+    <br />
+
+    <br>
+
+    <div class="w3-row-padding">
+        <div class="w3-third">
+            <center><input type="submit" button class="btn btn-primary" value="speichern" /></center><br>
+        </div>
+
+        <div class="w3-third">&NonBreakingSpace;</div>
+        <div class="w3-third">
+            <center><input type="reset" button class="btn btn-default" value="verwerfen"></center>
+        </div>
+        <br>
+    </div>
+
+    </form>
+
+    <div class="w3-row-padding">
+        <form class="w3-container w3-card-4 w3-round">
+            <h3>Teilnehmerliste</h3>
+
+            <div class="w3-row-padding">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teilnehmer ID</th>
+                            <th>Teilnehmername</th>
+                            <th>Teilnehmername 2</th>
+                            <th>AK</th>
+                            <th>Turnierwertzahl</th>
+                            <th>Gegner aktuell</th>
+                            <th>Tore</th>
+                            <th>:</th>
+                            <th>Tore</th>
+                            <th>Ansprechpartner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for zeile in tabelle %}
+                        <tr>
+                            <td>{{zeile.mnummer}}</td>
+                            <td>{{zeile.mname}}</td>
+                            <td>{{zeile.mnamezwei}}</td>
+                            <td>{{zeile.mak}}</td>
+                            <td>{{zeile.mtwz}}</td>
+                            <td>{{zeile.gegner}}</td>
+                            <td>{{zeile.ergt1}}</td>
+                            <td>:</td>
+                            <td>{{zeile.ergt2}}</td>
+                            <td>{{zeile.mansprechpartner}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br><br>
+            </div>
+        </form>
+
+        <br><br><br><br>
+
+        <div id="footer">
+            <p><center><H5>{{v_version_name}}</H5></center></p>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

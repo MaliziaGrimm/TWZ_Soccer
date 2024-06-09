@@ -1,0 +1,193 @@
+body 
+
+{  background-color: #FFFFFF;
+	font-family:Verdana;
+	font-size: 18px;
+
+    }
+
+
+p {
+  font-family:Verdana;
+  font-size: 15px;
+}
+
+
+article {
+display: grid;
+grid-template-columns: repeat(auto-fill, 30em);
+background-color: #FFFFFF;
+border: 1px solid #3896EE;
+}
+
+ table {
+	width: 95%;
+	background-color: #FFFFFF;
+  border-style:solid;
+  border-width: 1px;
+  text-align: center;
+  padding: 1px;
+	border-color: #3896ee;
+  }
+  
+th {
+	background-color: #666;
+	color: #FFFFFF;
+}
+tr {
+	background-color: #F2F2F2;
+	color: #000;
+}
+
+tr:nth-child(odd) {
+	background-color: #D8D8D8;
+}
+
+
+tr:hover {
+	background-color: #3896EE;
+	color: #fff;
+}
+
+
+h1 
+{color: #039A9A; 
+	font-family:Verdana;
+	font-size:30px;
+}
+
+h2 
+{color: #000000; 
+	font-family:Verdana;
+	font-size:20px;
+}
+
+h3 
+{color: #000000; 
+	font-family:Verdana;
+	font-size:12px;
+}
+
+h4 
+{color: #000000; 
+	font-family:Verdana;
+	font-size:8px;
+}
+
+h5 
+{color: #000000; 
+	font-family:Verdana;
+	font-size:5px;
+}
+
+
+nav ul {
+  list-style-type: none; 
+  margin: 0;
+  padding: 0;	
+  font-family: Verdana;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: block;
+  flex-direction: column;
+
+}
+
+nav li {
+	display: block;
+	float: left;
+    	color: white;
+    	text-align: left;
+    	padding: 0;
+	border: 1px solid #FFFFFF;
+    	text-decoration: none;
+	margin:0.25em;
+	}
+
+
+
+nav a {	
+	display:block;
+	width: 120px;
+	font-size: 15px;
+    	color: #000000;
+    	text-align: left;
+    	padding: 0.5em;
+    	text-decoration: none;
+	font-weight: 1px;
+  	transition: all .25s ease-in;
+	border-radius: 0px;
+	border: 1px solid #3896EE;
+	box-shadow: 0 10px 20px white inset;
+	background-color: #F2F2F2;
+    }
+
+	
+nav a:focus,
+nav a:hover,
+nav a:active,
+nav li[aria-current] a:focus,
+nav li[aria-current] a:hover {    
+  color: #3896EE; 
+  background-color: #e2e2e2;
+}
+
+.bildschatten {
+	opacity: 0.5;
+}
+
+
+@media (min-width: 55em) {
+	nav ul {
+	flex-direction: row;
+	}
+	article {
+	display: noflex;
+	}
+
+}
+
+form {
+	
+	width: 100%;
+	border: 0px solid green;
+	padding: 1em 1em 0em 1em;
+}
+
+
+
+
+input {
+
+	margin: 0em 0em 1em 1em;
+
+}
+
+
+
+label {
+
+	float: left;
+	text-align: right;
+
+	width: 10em;
+}
+
+#footer {
+
+	position: fixed;
+	padding: 10px;
+	border-color: #3896EE;
+	border-style: double;
+	background: #D8D8D8;
+	bottom: 1px;
+	left: 1px;
+	right: 1px;
+	font-size: 15px;
+	
+}
+
+#footer p {
+	margin: 1px;
+	float: right;
+}

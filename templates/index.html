@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{v_version_titel}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../static/twzico.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/w3.css">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/dna-theme.css">
+    <link rel="stylesheet" href="../static/format.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="w3-row-padding">
+        <header class="card">
+            <center><h3>{{v_version_program}}</h3></center>
+        </header>
+    </div>
+    <br>
+
+    <!--Navigation-->
+    <div class="w3-container">
+
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active w3-teal" href="/">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle w3-green w3-hover-teal" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Turniere</a>
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item w3-hover-teal" href="turnier.html">anlegen</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item w3-hover-teal disabled" href="turnierverwalten.html">verwalten*</a>
+                    <a class="dropdown-item w3-hover-teal" href="turnierloeschen.html">löschen</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle w3-green w3-hover-teal" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Teilnehmer</a>
+                <div class="dropdown-menu">
+
+                    <a class="dropdown-item w3-hover-teal" href="team.html">anlegen</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item w3-hover-teal disabled" href="teamaktivieren.html">de- oder aktivierenn</a>
+                    <a class="dropdown-item w3-hover-teal" href="teamloeschen.html">löschen</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle w3-green w3-hover-teal" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Runden</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item w3-hover-teal" href="rundeneu.html">Runde neu losen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundeneuerf.html">Runde neu manuell</a>
+                    <a class="dropdown-item w3-hover-teal" href="ergebnis.html">Ergebnisse eintragen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundebeenden.html">Runde beenden</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle w3-green w3-hover-teal" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sonderfunktionen</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item w3-hover-teal" href="spielfrei.html">Teilnehmer spielfrei</a>
+                    <a class="dropdown-item w3-hover-teal" href="turnierstand.html">Turnierstand</a>
+                    <a class="dropdown-item w3-hover-teal disabled" href="atwzliste.html">TWZ Liste</a>
+                    <a class="dropdown-item w3-hover-red"  href="ergebnisneu.html">Dynamische Ergebnisliste *Test</a>
+
+
+                </div>
+            </li>
+
+
+        </ul>
+    </div>
+
+    <br>
+
+    <center>
+        <button type="button" class="btn btn-info">
+            {{v_heute}}
+        </button>
+    </center>
+
+    <div class="w3-row-padding">
+        <br>
+        <div class="w3-quarter">
+            <img src="../static/image020.png"><br /><h4>Turniere</h4><br />
+            - Anlage der Turniere<br />
+            - Turniere verwalten (nicht aktiv)<br />
+            - Turniere löschen<br>
+            &nbsp;
+
+        </div>
+
+        <div class="w3-quarter">
+            <img src="../static/image002.png"><br /><h4>Teilnehmer</h4><br />
+
+            - Anlage der Teilnehmer<br />
+            - Aktivieren und Deaktivieren der Teilnehmer (nicht aktiv)<br>
+            - Teilnehmer löschen<br>
+            &nbsp;
+        </div>
+
+        <div class="w3-quarter">
+            <img src="../static/image020.png"><br /><h4>Spielrunden</h4><br />
+            - Runden neu setzen<br>
+            - Ergebnisse eintragen <br />
+            - TWZ berechnen/Runde beenden<br>
+
+            &nbsp;
+        </div>
+
+        <div class="w3-quarter">
+            <img src="../static/image019.png"><br /><h4>Reporting</h4><br />
+            - Teilnehmer spielfrei setzen<br />
+            - Rangliste (nicht aktiv)<br>
+            - weitere Auswertungen (nicht aktiv)<br />
+
+            &nbsp;
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-card">
+            <form class="w3-container w3-card-4 w3-round">
+                <h3>Turnierübersicht</h3>
+                <div class="w3-row-padding">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Turnier ID</th>
+                                <th>Turniername</th>
+                                <th>Veranstalter</th>
+                                <th>AK</th>
+                                <th>Spieltag</th>
+                                <th>Ansprechpartner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zeile in v_tmess %}
+                            <tr>
+                                <td>{{zeile.tnummer}}</td>
+                                <td>{{zeile.tname}}</td>
+                                <td>{{zeile.tveranstalter}}</td>
+                                <td>{{zeile.tak}}</td>
+                                <td>{{zeile.tdatum}}</td>
+                                <td>{{zeile.tansprechpartner}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="w3-row-padding">
+        <div class="w3-card">
+            <form class="w3-container w3-card-4 w3-round">
+                <h3>Teilnehmerliste</h3>
+                <div class="w3-row-padding">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teilnehmer</th>
+                                <th>Teilnehmer ID</th>
+                                <th>Name</th>
+                                <th>Name 2</th>
+                                <th>AK</th>
+                                <th>Turnierwertzahl</th>
+
+                                <th>Gegner</th>
+                                <th>Gegner -1</th>
+                                <th>Gegner -2</th>
+                                <th>Gegner -3</th>
+                                <th>Ansprechpartner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zeile in v_mmess %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{zeile.mnummer}}</td>
+                                <td>{{zeile.mname}}</td>
+                                <td>{{zeile.mnamezwei}}</td>
+                                <td>{{zeile.mak}}</td>
+                                <td>{{zeile.mtwz}}</td>
+                                <td>{{zeile.gegner}}</td>
+                                <td>{{zeile.gegnerm1}}</td>
+                                <td>{{zeile.gegnerm2}}</td>
+                                <td>{{zeile.gegnerm3}}</td>
+                                <td>{{zeile.mansprechpartner}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br />
+    <div class="w3-row-padding">
+
+        <footer class="w3-card-4 w3-round">
+            <center>
+                <br />
+                <h2>Anleitung:</h2>
+                <p>
+                    localhost:17102/ muss gestartet sein. Programmaufruf von TWZ_Tool erforderlich<br>
+                    Online Verbindung erforderlich. Tipp: prüfe das aktuelle Datum in Zeile 5 <br />
+                    
+                </p><br />
+            </center>
+        </footer>
+    </div>
+    
+    <div id="footer">
+        <p><center><H5>{{v_version_name}}</H5></center></p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

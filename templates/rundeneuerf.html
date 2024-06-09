@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{v_version_titel}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="../static/bewerber.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../static/w3.css">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/dna-theme.css">
+    <link rel="stylesheet" href="../static/format.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="w3-row-padding">
+        <header class="card">
+            <center><h3>{{v_version_program}}</h3></center>
+        </header>
+    </div>
+    <br>
+    <!--Navigation-->
+    <div class="w3-container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link w3-green" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Runden</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item w3-hover-teal" href="rundeneu.html">Runde neu losen</a>
+                    <a class="dropdown-item w3-hover-green" href="rundeneuerf.html">Runde neu manuell</a>
+                    <a class="dropdown-item w3-hover-teal" href="ergebnis.html">Ergebnisse eintragen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundebeenden.html">Runde beenden</a>
+
+                </div>
+            </li>
+            <!-- Navigation nur Home -->
+        </ul>
+    </div>
+
+    <br>
+
+    <div class="w3-row-padding">
+        <div class="w3-card">
+            <div class="w3-container w3-card-4 w3-round">
+                <h3> <center>Ansetzungsvorschlag</center> </h3>
+
+                <div class="w3-row-padding">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Brett</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Name 2</th>
+                                <th>W</th>
+                                <th>-</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Name 2</th>
+                                <th>W</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zeile in tabelle2 %}
+                            <tr>
+                                <td>{{zeile.Brett}}</td>
+                                <td>{{zeile.Spieler1.Initialen}}</td>
+                                <td>{{zeile.Spieler1.Name}}</td>
+                                <td>{{zeile.Spieler1.Namezwei}}</td>
+                                <td>{{zeile.Spieler1.Farbe}}</td>
+
+                                <td> - </td>
+
+                                <td>{{zeile.Spieler2.Initialen}}</td>
+                                <td>{{zeile.Spieler2.Name}}</td>
+                                <td>{{zeile.Spieler2.Namezwei}}</td>
+                                <td>{{zeile.Spieler2.Farbe}}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <br />
+    <div class="w3-row-padding">
+        <form action="http://localhost:17102/rundeneu.html" , method="POST">
+            <div class="w3-row-padding">
+                <br>
+                <div class="w3-container w3-card-4 w3-round">
+                    <div class="w3-third">
+                        <h3>&nbsp;</h3>
+                    </div>
+                    <div class="w3-third">
+                        <center>
+                            <h3>
+                                Ansetzungen manuell erfassen
+                            </h3>
+                        </center>
+                    </div>
+                    <div class="w3-third">
+                        <h3>&nbsp;</h3>
+                    </div>
+                    <div class="w3-row-padding">
+                        <div class="w3-quarter">
+                            <h3>&nbsp;</h3>
+                        </div>
+                        <div class="w3-half w3-card-4 w3-round">
+                            <br />
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 1 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f1t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 1 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f1t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 2 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f2t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 2 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f2t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 3 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f3t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 3 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f3t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 4 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f4t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 4 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f4t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 5 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f5t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 5 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f5t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 6 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f6t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 6 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f6t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 7 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f7t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 7 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f7t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 8 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f8t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 8 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f8t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 9 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f9t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 9 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f9t2" maxlength="2">
+                            </div>
+                            <div class="w3-container">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 10 Teilnehmer 1</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f10t1" maxlength="2">
+                                <div class="w3-col l2 w3-left">
+                                    <p><label>Feld 10 Teilnehmer 2</label></p>
+                                </div>
+                                <input class="w3-col l4 w3-input w3-border" type="text" name="form_f10t2" maxlength="2">
+                            </div>
+                            <br />
+                        </div>
+                        <div class="w3-quarter">
+                            <h3>&nbsp;</h3>
+                            <br />
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="w3-row-padding">
+                    <br>
+                    <div class="w3-row-padding">
+                        <div class="w3-third">
+                            <center><input type="submit" button class="btn btn-primary" value="speichern" /></center><br>
+                        </div>
+                        <div class="w3-third">&NonBreakingSpace;</div>
+                        <div class="w3-third">
+                            <center><input type="reset" button class="btn btn-default" value="verwerfen"></center>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <br />
+
+
+
+
+
+    <br />
+
+    <div class="w3-row-padding">
+        <div class="w3-card">
+            <div class="w3-container w3-card-4 w3-round">
+                <h3>Teilnehmerliste</h3>
+
+                <div class="w3-row-padding">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teilnehmer  ID</th>
+                                <th>Teilnehmername</th>
+                                <th>Teilnehmername 2</th>
+                                <th>AK</th>
+                                <th>Turnierwertzahl</th>
+
+                                <th>Gegner</th>
+                                <th>Gegner -1</th>
+                                <th>Gegner -2</th>
+                                <th>Gegner -3</th>
+                                <th>Ansprechpartner</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for zeile in tabelle %}
+                            <tr>
+                                <td>{{zeile.mnummer}}</td>
+                                <td>{{zeile.mname}}</td>
+                                <td>{{zeile.mnamezwei}}</td>
+                                <td>{{zeile.mak}}</td>
+                                <td>{{zeile.mtwz}}</td>
+                                <td>{{zeile.gegner}}</td>
+                                <td>{{zeile.gegnerm1}}</td>
+                                <td>{{zeile.gegnerm2}}</td>
+                                <td>{{zeile.gegnerm3}}</td>
+                                <td>{{zeile.mansprechpartner}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />    <br />    <br />
+
+    <div id="footer">
+        <p><center><H5>{{v_version_name}}</H5></center></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+<title>{{v_version_titel}}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="../static/bewerber.ico" type="image/x-icon" />
+<link rel="stylesheet" href="../static/w3.css">
+<link rel="stylesheet" href="../static/bootstrap.min.css">
+<link rel="stylesheet" href="../static/dna-theme.css">
+<link rel="stylesheet" href="../static/format.css">
+<!-- fertig 26.12.2020 -->
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <div class="w3-row-padding">
+        <header class="card">
+            <center><h3>{{v_version_program}}</h3></center>
+        </header>
+    </div>
+    <br>
+
+    <!--Navigation-->
+    <div class="w3-container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link w3-green" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Runden</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item w3-hover-teal" href="rundeneu.html">Runde neu losen</a>
+                    <a class="dropdown-item w3-hover-teal" href="rundeneuerf.html">Runde neu manuell</a>
+                    <a class="dropdown-item w3-hover-teal" href="ergebnis.html">Ergebnis eintragen</a>
+                    <a class="dropdown-item w3-hover-green" href="rundebeenden.html">Runde beenden</a>
+                </div>
+            </li>
+            <!-- Navigation nur Home -->
+        </ul>
+    </div>
+
+    <br>
+    <div class="w3-row-padding">
+        <form class="w3-container w3-card-4 w3-round">
+            <h3>Übersicht der erfassten Ergebnisse</h3>
+
+            <div class="w3-row-padding">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teilnehmer ID</th>
+                            <th>Teilnehmername</th>
+                            <th>Teilnehmername 2</th>
+
+                            <th>Gegner aktuell</th>
+                            <th>Tore</th>
+                            <th>:</th>
+                            <th>Tore</th>
+                            <th>Turnierwertzahl</th>
+                            <th>neue TWZ</th>
+                            <th>Ansprechpartner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for zeile in tabelle %}
+                        <tr>
+                            <td>{{zeile.mnummer}}</td>
+                            <td>{{zeile.mname}}</td>
+                            <td>{{zeile.mnamezwei}}</td>
+
+                            <td>{{zeile.gegner}}</td>
+                            <td>{{zeile.ergt1}}</td>
+                            <td>:</td>
+                            <td>{{zeile.ergt2}}</td>
+                            <td>{{zeile.mtwz}}</td>
+                            <td>{{zeile.neuetwz}}</td>
+                            <td>{{zeile.mansprechpartner}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <br><br>
+            </div>
+        </form>
+        <br /><br />
+
+
+        <form action="http://localhost:17102/rundebeenden.html" class="w3-container w3-card-4 w3-round" , method="POST">
+            <div class="w3-row-padding">
+                <br /><br />
+                <div class="w3-third">
+                    <h3>&nbsp;</h3>
+                </div>
+                <div class="w3-third">
+                    <div class="w3-col l6">
+                        <p><h3>Ergebnisse freigeben? </h3></p>
+                    </div>
+                </div>
+                <div class="w3-third">
+                    <h3>&nbsp;</h3>
+                </div>
+
+            </div>
+
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3>&nbsp;</h3>
+                </div>
+                <div class="w3-third">
+                    <select class="w3-form w3-col l6 w3-input w3-border" type="text" name="form_ergf">
+                        <option value="0" selected>Nein</option>
+                        <option value="1">Ja</option>
+                    </select>
+                </div>
+                <div class="w3-third">
+                    <h3>&nbsp;</h3>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <center><input type="submit" button class="btn btn-primary" value="speichern" /></center><br>
+                </div>
+
+                <div class="w3-third">&NonBreakingSpace;</div>
+                <div class="w3-third">
+                    <center><input type="reset" button class="btn btn-default" value="verwerfen"></center>
+                </div>
+                <br>
+            </div>
+        </form>
+    </div>
+    <div id="footer">
+        <p><center><H5>{{v_version_name}}</H5></center></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
